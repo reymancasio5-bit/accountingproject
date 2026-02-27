@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LedgerPro — Professional Accounting Suite</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Toast container -->
+<div id="toast-container"></div>
+<!-- Loading Spinner -->
+<div id="loading-overlay" class="hidden">
+  <div class="spinner-wrap">
+    <div class="spinner"></div>
+    <p id="loading-text">Processing...</p>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav id="sidebar">
+  <div class="sidebar-header">
+    <div class="logo">
+      <div class="logo-icon">₤</div>
+      <div class="logo-text">
+        <span class="logo-name">LedgerPro</span>
+        <span class="logo-sub">Accounting Suite</span>
+      </div>
+    </div>
+  </div>
+  <div class="nav-section-label">Overview</div>
+  <ul class="nav-list">
+    <li><a href="#" class="nav-item active" data-page="dashboard">
+      <span class="nav-icon">◈</span><span>Dashboard</span>
+    </a></li>
+  </ul>
+  <div class="nav-section-label">Ledger</div>
+  <ul class="nav-list">
+    <li><a href="#" class="nav-item" data-page="coa">
+      <span class="nav-icon">⊞</span><span>Chart of Accounts</span>
+    </a></li>
+    <li><a href="#" class="nav-item" data-page="journal">
+      <span class="nav-icon">✎</span><span>Journal Entry</span>
+    </a></li>
+    <li><a href="#" class="nav-item" data-page="pdf-upload">
+      <span class="nav-icon">⬆</span><span>PDF Upload</span>
+    </a></li>
+    <li><a href="#" class="nav-item" data-page="general-ledger">
+      <span class="nav-icon">≡</span><span>General Ledger</span>
+    </a></li>
+  </ul>
+  <div class="nav-section-label">Reports</div>
+  <ul class="nav-list">
+    <li><a href="#" class="nav-item" data-page="income-statement">
+      <span class="nav-icon">◐</span><span>Income Statement</span>
+    </a></li>
+    <li><a href="#" class="nav-item" data-page="balance-sheet">
+      <span class="nav-icon">⊟</span><span>Balance Sheet</span>
+    </a></li>
+    <li><a href="#" class="nav-item" data-page="trial-balance">
+      <span class="nav-icon">⊜</span><span>Trial Balance</span>
+    </a></li>
+  </ul>
+  <div class="sidebar-footer">
+    <button class="btn-reset" onclick="App.resetData()">Reset Demo Data</button>
+  </div>
+</nav>
+
+<!-- Mobile menu button -->
+<button id="mobile-menu-btn" onclick="App.toggleSidebar()">☰</button>
+
+<!-- Main Content -->
+<main id="main-content">
+  <div id="page-dashboard" class="page active"></div>
+  <div id="page-coa" class="page"></div>
+  <div id="page-journal" class="page"></div>
+  <div id="page-pdf-upload" class="page"></div>
+  <div id="page-general-ledger" class="page"></div>
+  <div id="page-income-statement" class="page"></div>
+  <div id="page-balance-sheet" class="page"></div>
+  <div id="page-trial-balance" class="page"></div>
+</main>
+
+<!-- Modal -->
+<div id="modal-overlay" class="hidden">
+  <div id="modal-box">
+    <button class="modal-close" onclick="App.closeModal()">×</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="db.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
