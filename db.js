@@ -56,70 +56,9 @@ const DB = (() => {
     { id: 'acc_5900', code: '5900', name: 'Miscellaneous Expense', type: 'Expense', normal: 'Debit', balance: 0 },
   ];
 
-  const SEED_ENTRIES = [
-    {
-      id: 'je_001', date: '2024-01-01', description: 'Initial capital investment',
-      reference: 'JE-001', status: 'Posted', createdAt: '2024-01-01T09:00:00Z'
-    },
-    {
-      id: 'je_002', date: '2024-01-05', description: 'Purchase of office equipment',
-      reference: 'JE-002', status: 'Posted', createdAt: '2024-01-05T10:30:00Z'
-    },
-    {
-      id: 'je_003', date: '2024-01-10', description: 'Sales revenue received',
-      reference: 'JE-003', status: 'Posted', createdAt: '2024-01-10T11:00:00Z'
-    },
-    {
-      id: 'je_004', date: '2024-01-15', description: 'Monthly rent payment',
-      reference: 'JE-004', status: 'Posted', createdAt: '2024-01-15T09:00:00Z'
-    },
-    {
-      id: 'je_005', date: '2024-01-20', description: 'Service revenue on account',
-      reference: 'JE-005', status: 'Posted', createdAt: '2024-01-20T14:00:00Z'
-    },
-    {
-      id: 'je_006', date: '2024-01-25', description: 'Salaries paid',
-      reference: 'JE-006', status: 'Posted', createdAt: '2024-01-25T09:00:00Z'
-    },
-    {
-      id: 'je_007', date: '2024-02-01', description: 'Utility bill payment',
-      reference: 'JE-007', status: 'Posted', createdAt: '2024-02-01T10:00:00Z'
-    },
-    {
-      id: 'je_008', date: '2024-02-10', description: 'Sales of inventory',
-      reference: 'JE-008', status: 'Posted', createdAt: '2024-02-10T11:30:00Z'
-    },
-  ];
+  const SEED_ENTRIES = [];
 
-  const SEED_LINES = [
-    // JE-001: Initial capital investment
-    { id: 'jl_001a', entryId: 'je_001', accountId: 'acc_1000', description: 'Cash from investors', debit: 50000, credit: 0, seq: 1 },
-    { id: 'jl_001b', entryId: 'je_001', accountId: 'acc_3000', description: 'Common stock issued', debit: 0, credit: 30000, seq: 2 },
-    { id: 'jl_001c', entryId: 'je_001', accountId: 'acc_3100', description: 'Additional paid-in capital', debit: 0, credit: 20000, seq: 3 },
-    // JE-002: Equipment purchase
-    { id: 'jl_002a', entryId: 'je_002', accountId: 'acc_1600', description: 'Office equipment', debit: 8000, credit: 0, seq: 1 },
-    { id: 'jl_002b', entryId: 'je_002', accountId: 'acc_1000', description: 'Cash payment', debit: 0, credit: 8000, seq: 2 },
-    // JE-003: Sales revenue
-    { id: 'jl_003a', entryId: 'je_003', accountId: 'acc_1000', description: 'Cash received', debit: 15000, credit: 0, seq: 1 },
-    { id: 'jl_003b', entryId: 'je_003', accountId: 'acc_4000', description: 'Sales revenue', debit: 0, credit: 15000, seq: 2 },
-    // JE-004: Rent
-    { id: 'jl_004a', entryId: 'je_004', accountId: 'acc_5200', description: 'Office rent', debit: 2000, credit: 0, seq: 1 },
-    { id: 'jl_004b', entryId: 'je_004', accountId: 'acc_1000', description: 'Cash payment', debit: 0, credit: 2000, seq: 2 },
-    // JE-005: Service revenue on account
-    { id: 'jl_005a', entryId: 'je_005', accountId: 'acc_1100', description: 'A/R - consulting services', debit: 7500, credit: 0, seq: 1 },
-    { id: 'jl_005b', entryId: 'je_005', accountId: 'acc_4100', description: 'Service revenue', debit: 0, credit: 7500, seq: 2 },
-    // JE-006: Salaries
-    { id: 'jl_006a', entryId: 'je_006', accountId: 'acc_5100', description: 'Salaries expense', debit: 9000, credit: 0, seq: 1 },
-    { id: 'jl_006b', entryId: 'je_006', accountId: 'acc_1000', description: 'Cash paid', debit: 0, credit: 9000, seq: 2 },
-    // JE-007: Utilities
-    { id: 'jl_007a', entryId: 'je_007', accountId: 'acc_5300', description: 'Electricity & gas', debit: 450, credit: 0, seq: 1 },
-    { id: 'jl_007b', entryId: 'je_007', accountId: 'acc_1000', description: 'Cash paid', debit: 0, credit: 450, seq: 2 },
-    // JE-008: Sales of inventory
-    { id: 'jl_008a', entryId: 'je_008', accountId: 'acc_1000', description: 'Cash from sales', debit: 12000, credit: 0, seq: 1 },
-    { id: 'jl_008b', entryId: 'je_008', accountId: 'acc_4000', description: 'Sales revenue', debit: 0, credit: 12000, seq: 2 },
-    { id: 'jl_008c', entryId: 'je_008', accountId: 'acc_5000', description: 'Cost of goods sold', debit: 7200, credit: 0, seq: 3 },
-    { id: 'jl_008d', entryId: 'je_008', accountId: 'acc_1300', description: 'Inventory reduction', debit: 0, credit: 7200, seq: 4 },
-  ];
+  const SEED_LINES = [];
 
   // ── Init ─────────────────────────────────────────────────────────
   function init() {
